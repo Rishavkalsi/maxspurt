@@ -1,0 +1,94 @@
+@import "./var";
+
+:root {
+  @include cssVariables;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+
+  @include max($md) {
+    font-size: 14px;
+  }
+}
+body {
+  min-height: 100vh;
+}
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif !important;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  -webkit-user-drag: none;
+  -webkit-user-drag: none;
+}
+a {
+  color: inherit;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+h1 {
+  font-size: var(--f40);
+  font-weight: 700;
+}
+h2 {
+  font-size: var(--f32);
+  font-weight: 700;
+}
+h3 {
+  font-size: var(--f24);
+  font-weight: 700;
+}
+h4 {
+  font-size: var(--f20);
+  font-weight: 600;
+}
+h5 {
+  font-size: var(--f16);
+  font-weight: 400;
+}
+h6 {
+  font-size: var(--f14);
+  font-weight: 400;
+}
+.section {
+  padding: var(--sec_space) 0;
+}
+.heading {
+  h6 {
+    color: $secondary;
+  }
+  h2 {
+    margin: 12px 0 1.75rem;
+  }
+}
+
+// =========buttons =======
+.btn {
+  &:focus,
+  &:active {
+    box-shadow: none !important;
+  }
+  &.btn-primary {
+    background-color: $primary;
+  }
+  &.btn-secondary {
+    background-color: $secondary;
+    border-color: $secondary;
+    &:active {
+      background-color: $secondary;
+      border-color: $secondary;
+    }
+  }
+}

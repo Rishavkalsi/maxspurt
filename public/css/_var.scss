@@ -1,0 +1,70 @@
+$primary: #0c1f3d;
+$secondary: #ee161f;
+$black: #000;
+$white: #fff;
+$error: #d32f2f;
+$text_color: #647083;
+
+$sm: 567;
+$md: 767;
+$lg: 991;
+$xl: 1199;
+$xl1: 1280;
+$xl2: 1365;
+$xl3: 1399;
+$xl5: 1599;
+
+@mixin min($value) {
+  @media screen and (min-width: ($value + 1 + "px")) {
+    @content;
+  }
+}
+@mixin max($value) {
+  @media screen and (max-width: ($value + "px")) {
+    @content;
+  }
+}
+@mixin minMax($min, $max) {
+  @media (min-width: ($min + "px")) and (max-width: ($max + "px")) {
+    @content;
+  }
+}
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin noUserSelect {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+@mixin cssVariables {
+  --f54: 54px;
+  --f40: 40px;
+  --f36: 36px;
+  --f32: 32px;
+  --f24: 24px;
+  --f20: 20px;
+  --f18: 18px;
+  --f16: 16px;
+  --f14: 14px;
+  --btnSpace: 1.25rem;
+  --sec_space: 100px;
+  @include max($md) {
+    --f48: 34px;
+    --f40: 30px;
+    --f36: 26px;
+    --f32: 24px;
+    --f24: 20px;
+    --f20: 18px;
+    --f18: 16px;
+    --f16: 14px;
+    --btnSpace: 1rem;
+  }
+  @include max($sm) {
+    --f40: 26px;
+    --f20: 16px;
+  }
+}
