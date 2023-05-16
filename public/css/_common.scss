@@ -73,6 +73,24 @@ h6 {
     margin: 12px 0 1.75rem;
   }
 }
+.heading2 {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    height: 8px;
+    width: 105px;
+    background-color: $secondary;
+  }
+  h2 {
+    margin: 12px 0 1rem;
+  }
+  p {
+    color: $text_color;
+    margin: 0;
+  }
+}
 
 // =========buttons =======
 .btn {

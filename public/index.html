@@ -213,7 +213,7 @@
     <section class="section forSale">
       <div class="container">
         <div class="heading_wrap">
-          <div class="heading">
+          <div class="heading2">
             <h2>Dallas Properties for Sale</h2>
             <p>
               Welcome to our community's top resource for real estate services
@@ -223,10 +223,125 @@
             <button class="btn btn-secondary">View All</button>
           </div>
         </div>
+        <div class="sales_wrapper">
+          <div class="card_col">
+            <div
+              class="card"
+              style="background-image: url(./images/sale/sale1.jpg)"
+            >
+              <div class="content">
+                <h5>Dallas</h5>
+                <p>$18,99000</p>
+              </div>
+            </div>
+          </div>
+          <div class="card_col_lg">
+            <div
+              class="card"
+              style="background-image: url(./images/sale/sale2.jpg)"
+            >
+              <div class="content">
+                <h5>Dallas</h5>
+                <p>$18,99000</p>
+              </div>
+            </div>
+          </div>
+          <div class="card_col">
+            <div
+              class="card"
+              style="background-image: url(./images/sale/sale3.jpg)"
+            >
+              <div class="content">
+                <h5>Dallas</h5>
+                <p>$18,99000</p>
+              </div>
+            </div>
+          </div>
+          <div class="card_col_lg">
+            <div
+              class="card"
+              style="background-image: url(./images/sale/sale4.jpg)"
+            >
+              <div class="content">
+                <h5>Dallas</h5>
+                <p>$18,99000</p>
+              </div>
+            </div>
+          </div>
+          <div class="card_col">
+            <div
+              class="card"
+              style="background-image: url(./images/sale/sale5.jpg)"
+            >
+              <div class="content">
+                <h5>Dallas</h5>
+                <p>$18,99000</p>
+              </div>
+            </div>
+          </div>
+          <div class="card_col">
+            <div
+              class="card"
+              style="background-image: url(./images/sale/sale6.jpg)"
+            >
+              <div class="content">
+                <h5>Dallas</h5>
+                <p>$18,99000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section contactUs">
+      <div class="container">
+        <div class="contact_inner">
+          <div class="content_wrap">
+            <h1>An Expert in Real Estate</h1>
+            <div class="contactType_wrap">
+              <div class="single_type">
+                <div class="icon">
+                  <img src="./icons/phone.svg" alt="" />
+                </div>
+                <div class="detail">
+                  <p>Phone Number</p>
+                  <h4>800-450-8090</h4>
+                </div>
+              </div>
+              <div class="single_type">
+                <div class="icon">
+                  <img src="./icons/phone.svg" alt="" />
+                </div>
+                <div class="detail">
+                  <p>Phone Number</p>
+                  <h4>800-450-8090</h4>
+                </div>
+              </div>
+              <div class="single_type">
+                <div class="icon">
+                  <img src="./icons/phone.svg" alt="" />
+                </div>
+                <div class="detail">
+                  <p>Phone Number</p>
+                  <h4>800-450-8090</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="image_wrap">
+            <img src="./images/building.png" alt="" />
+          </div>
+        </div>
       </div>
     </section>
     <footer class="footer">
-      <div class="container"></div>
+      <div class="container">
+        <div class="footer_wrapper">
+          <div class="footer_col1">
+            <div class="footer_"></div>
+          </div>
+        </div>
+      </div>
     </footer>
   </body>
   <script
@@ -257,4 +372,49 @@
       smartSpeed: 800,
     });
   </script>
+
+  <!-- <script>
+    window.onload = function () {
+      document.addEventListener(
+        "contextmenu",
+        function (e) {
+          e.preventDefault();
+        },
+        false
+      );
+      document.addEventListener(
+        "keydown",
+        function (e) {
+          if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+            disabledEvent(e);
+          }
+          if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+            disabledEvent(e);
+          }
+          if (
+            e.keyCode == 83 &&
+            (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)
+          ) {
+            disabledEvent(e);
+          }
+          if (e.ctrlKey && e.keyCode == 85) {
+            disabledEvent(e);
+          }
+          if (e.keyCode == 123) {
+            disabledEvent(e);
+          }
+        },
+        false
+      );
+      function disabledEvent(e) {
+        if (e.stopPropagation) {
+          e.stopPropagation();
+        } else if (window.event) {
+          window.event.cancelBubble = true;
+        }
+        e.preventDefault();
+        return false;
+      }
+    };
+  </script> -->
 </html>
