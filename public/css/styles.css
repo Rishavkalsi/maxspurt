@@ -93,12 +93,18 @@ h4 {
 
 h5 {
   font-size: var(--f16);
-  font-weight: 400;
+  font-weight: 600;
 }
 
 h6 {
   font-size: var(--f14);
   font-weight: 400;
+}
+
+@media screen and (min-width: 1366px) {
+  .container {
+    max-width: 1280px;
+  }
 }
 
 .section {
@@ -219,20 +225,32 @@ h6 {
 .homes .homes_slider.owl-theme .owl-dots {
   padding-top: 30px;
 }
+.homes .homes_slider.owl-theme .owl-dots .active span {
+  background: #0c1f3d;
+}
 .homes .homes_slider.owl-theme .owl-nav {
   position: absolute;
   right: 0;
   bottom: -10px;
+  display: flex;
 }
 .homes .homes_slider.owl-theme .owl-nav button {
   padding: 10px !important;
-  border-radius: 4px;
+  border-radius: 8px;
+  color: #647083;
   line-height: 1;
   background-color: #fff;
-  font-size: 1rem;
+  font-size: 2rem;
+  height: 44px;
+  width: 44px;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
 }
 .homes .homes_slider.owl-theme .owl-nav button span {
-  line-height: 1;
+  line-height: 0;
 }
 .homes .card_img {
   height: 275px;
@@ -378,4 +396,96 @@ h6 {
 .footer {
   padding: calc(var(--sec_space) / 2) 0;
   background-color: #0c1f3d;
+  color: #fff;
+}
+.footer .footer_top {
+  --spacing: 1rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  margin: 0 calc(-1 * var(--spacing));
+}
+.footer .footer_top > * {
+  padding: 0 var(--spacing);
+}
+.footer .footer_top .footer_col1 {
+  flex-basis: 35%;
+}
+.footer .footer_top .footer_col1 .footer_logo img {
+  height: 91px;
+}
+.footer .footer_top .footer_col1 .subline {
+  font-weight: 600;
+  margin: 12px 0 1.5rem;
+}
+.footer .footer_top .footer_col1 .address h6 {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.footer .footer_top .footer_col1 .address h6 svg {
+  height: 18px;
+  width: 18px;
+}
+.footer .footer_top .footer_col1 .social_links {
+  margin-top: 2.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.footer .footer_top .footer_col1 .social_links a {
+  cursor: pointer;
+  height: 2.25rem;
+  width: 2.25rem;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer .footer_top .footer_col1 .social_links a svg {
+  max-height: 14px;
+}
+.footer .footer_top .footer_col2 {
+  flex-basis: 18%;
+}
+.footer .footer_top .footer_col2 a {
+  display: contents;
+  color: inherit;
+}
+.footer .footer_top .footer_col2 h5 {
+  margin-top: 1.5rem;
+  min-height: 40px;
+}
+.footer .footer_top .footer_col2 ul {
+  opacity: 0.9;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+.footer .footer_top .footer_col3 {
+  flex-basis: 28%;
+}
+.footer .footer_top .footer_col3 .contact_card {
+  padding: 1.5rem 1.75rem;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.footer .footer_top .footer_col3 .contact_card h5 {
+  margin-bottom: 1.5rem;
+}
+.footer .footer_top .footer_col3 .single_field {
+  max-width: 245px;
+  height: 47px;
+  margin-bottom: 12px;
+}
+.footer .footer_top .footer_col3 .single_field input {
+  border-radius: 6px 0 0 6px;
+  font-size: 14px;
+}
+.footer .footer_top .footer_col3 .single_field button {
+  border: none;
+  border-radius: 0 6px 6px 0;
+  color: #fff;
 }/*# sourceMappingURL=styles.css.map */

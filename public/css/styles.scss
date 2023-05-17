@@ -90,19 +90,31 @@
     &.owl-theme {
       .owl-dots {
         padding-top: 30px;
+        .active {
+          span {
+            background: $primary;
+          }
+        }
       }
       .owl-nav {
         position: absolute;
         right: 0;
         bottom: -10px;
+        display: flex;
         button {
           padding: 10px !important;
-          border-radius: 4px;
+          border-radius: 8px;
+          color: #647083;
           line-height: 1;
           background-color: #fff;
-          font-size: 1rem;
+          font-size: 2rem;
+          height: 44px;
+          width: 44px;
+          outline: none;
+          @include flexCenter;
+          vertical-align: middle;
           span {
-            line-height: 1;
+            line-height: 0;
           }
         }
       }
@@ -277,4 +289,100 @@
 .footer {
   padding: calc(var(--sec_space) / 2) 0;
   background-color: $primary;
+  color: $white;
+
+  .footer_top {
+    --spacing: 1rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba($white, 0.2);
+    display: flex;
+    margin: 0 calc(-1 * var(--spacing));
+    > * {
+      padding: 0 var(--spacing);
+    }
+    .footer_col1 {
+      flex-basis: 35%;
+      .footer_logo {
+        img {
+          height: 91px;
+        }
+      }
+      .subline {
+        font-weight: 600;
+        margin: 12px 0 1.5rem;
+      }
+      .address {
+        h6 {
+          margin-bottom: 12px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          svg {
+            height: 18px;
+            width: 18px;
+          }
+        }
+      }
+      .social_links {
+        margin-top: 2.25rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        a {
+          cursor: pointer;
+          height: 2.25rem;
+          width: 2.25rem;
+          border-radius: 50%;
+          border: 2px solid rgba($white, 0.25);
+          @include flexCenter;
+          svg {
+            max-height: 14px;
+          }
+        }
+      }
+    }
+    .footer_col2 {
+      flex-basis: 18%;
+      a {
+        display: contents;
+        color: inherit;
+      }
+      h5 {
+        margin-top: 1.5rem;
+        min-height: 40px;
+      }
+      ul {
+        opacity: 0.9;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+      }
+    }
+    .footer_col3 {
+      flex-basis: 28%;
+      .contact_card {
+        // margin-top: 1rem;
+        padding: 1.5rem 1.75rem;
+        background-color: rgba($white, 0.1);
+        h5 {
+          margin-bottom: 1.5rem;
+        }
+      }
+      .single_field {
+        max-width: 245px;
+        height: 47px;
+        margin-bottom: 12px;
+        input {
+          border-radius: 6px 0 0 6px;
+          font-size: 14px;
+        }
+        button {
+          border: none;
+          border-radius: 0 6px 6px 0;
+          color: #fff;
+        }
+      }
+    }
+  }
 }
