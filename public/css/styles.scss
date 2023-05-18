@@ -73,6 +73,23 @@
   }
 }
 
+// ============== Quick search =================
+.quickSearch {
+  .search_inner {
+    background: $white;
+    box-shadow: 0px 20px 50px rgba(219, 222, 225, 0.4);
+    border-radius: 12px;
+    min-height: 150px;
+    margin-top: -2rem;
+    position: relative;
+    z-index: 1;
+    padding: 1.5rem;
+  }
+  .search_wrapper {
+    display: flex;
+  }
+}
+
 // =========== get in touch =====================
 
 .homes {
@@ -381,6 +398,64 @@
           border: none;
           border-radius: 0 6px 6px 0;
           color: #fff;
+        }
+      }
+    }
+  }
+  .footer_bottom {
+    padding-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .footer_bottomLeft {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      img {
+        max-height: 36px;
+        max-width: 150px;
+      }
+      .text {
+        a {
+          margin-bottom: 4px;
+          display: block;
+          text-decoration: underline;
+        }
+      }
+    }
+    .footer_bottomRight {
+      display: flex;
+      gap: 2rem;
+      select {
+        background-color: #243550;
+        border-radius: 6px;
+        border: none;
+        border-left: 1px solid #e7e8f2;
+        color: $white;
+        width: 220px;
+        padding: 10px 16px;
+        height: 40px;
+        &:focus {
+          box-shadow: none;
+          outline: none;
+        }
+        option {
+          color: $white;
+        }
+      }
+      .btns_wrap {
+        display: flex;
+        gap: 1rem;
+        button {
+          @include flexCenter;
+          background-color: #243550;
+          color: #fff;
+          border: none;
+          border-radius: 6px;
+        }
+        img {
+          max-width: 90%;
+          max-height: 90%;
         }
       }
     }
