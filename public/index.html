@@ -87,6 +87,32 @@
           </div>
         </div>
       </div>
+      <div class="owl-carousel owl-theme banner_slider">
+        <div class="item">
+          <div
+            class="image"
+            style="background-image: url(./images/bannerSlider1.jpg)"
+          ></div>
+        </div>
+        <div class="item">
+          <div
+            class="image"
+            style="background-image: url(./images/bannerSlider2.jpg)"
+          ></div>
+        </div>
+        <div class="item">
+          <div
+            class="image"
+            style="background-image: url(./images/bannerSlider3.jpg)"
+          ></div>
+        </div>
+        <div class="item">
+          <div
+            class="image"
+            style="background-image: url(./images/bannerSlider2.jpg)"
+          ></div>
+        </div>
+      </div>
     </section>
     <section class="section quickSearch py-0">
       <div class="container">
@@ -709,6 +735,26 @@
       dots: true,
       smartSpeed: 800,
       nav: true,
+      responsive: {
+        992: {
+          items: 3,
+        },
+        768: {
+          items: 2,
+        },
+        0: {
+          items: 1,
+        },
+      },
+    });
+    $(".banner_slider").owlCarousel({
+      loop: false,
+      margin: 16,
+      autoplay: true,
+      dots: false,
+      nav: true,
+      items: 4,
+
       responsive: {
         992: {
           items: 3,

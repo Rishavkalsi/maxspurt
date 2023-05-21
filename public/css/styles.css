@@ -81,15 +81,21 @@
   --btnSpace: 1.25rem;
   --sec_space: 100px;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1365px) {
   :root {
     --f54: 42px;
+  }
+}
+@media screen and (max-width: 991px) {
+  :root {
+    --f54: 40px;
     --f40: 36px;
   }
 }
 @media screen and (max-width: 767px) {
   :root {
     --sec_space: 50px;
+    --f54: 36px;
     --f48: 34px;
     --f40: 30px;
     --f36: 26px;
@@ -149,7 +155,7 @@ h6 {
 }
 
 h1 {
-  font-size: var(--f40);
+  font-size: var(--f54);
   font-weight: 700;
 }
 
@@ -294,11 +300,13 @@ h6 {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: calc(100vh - 91px);
+  height: calc(100vh - 91px);
+  min-height: 300px;
   max-height: 640px;
   display: flex;
   align-items: flex-end;
   position: relative;
+  overflow: hidden;
 }
 .banner::after {
   content: "";
@@ -307,7 +315,15 @@ h6 {
   background: linear-gradient(90deg, rgba(0, 0, 0, 0.52) 0%, rgba(0, 0, 0, 0) 100%);
 }
 .banner .banner_wrapper {
-  padding: 2rem 0;
+  padding: 4rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media screen and (min-width: 1200px) {
+  .banner .banner_wrapper {
+    padding-bottom: 6rem;
+  }
 }
 .banner .banner_content {
   color: #fff;
@@ -328,6 +344,47 @@ h6 {
 }
 .banner .banner_content p {
   opacity: 0.88;
+}
+.banner .banner_slider {
+  width: 620px;
+  position: absolute;
+  right: -1rem;
+  bottom: 4rem;
+}
+.banner .banner_slider .item .image {
+  border-radius: 10px;
+  height: 232px;
+  background-position: center;
+  background-size: cover;
+}
+.banner .banner_slider .item img {
+  border-radius: inherit;
+}
+.banner .banner_slider .owl-nav button {
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  font-size: 2rem;
+  background-color: #fff;
+  color: #0c1f3d;
+  cursor: pointer;
+  outline: none;
+}
+.banner .banner_slider .owl-nav button.disabled {
+  background-color: transparent;
+  color: #fff;
+  opacity: 1;
+}
+@media screen and (max-width: 1365px) {
+  .banner .banner_content {
+    max-width: 445px;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .banner .banner_slider {
+    display: none;
+  }
 }
 
 .quickSearch {

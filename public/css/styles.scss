@@ -70,11 +70,13 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: calc(100vh - 91px);
+  height: calc(100vh - 91px);
+  min-height: 300px;
   max-height: 640px;
   display: flex;
   align-items: flex-end;
   position: relative;
+  overflow: hidden;
   &::after {
     content: "";
     position: absolute;
@@ -86,7 +88,13 @@
     );
   }
   .banner_wrapper {
-    padding: 2rem 0;
+    padding: 4rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include min($xl) {
+      padding-bottom: 6rem;
+    }
   }
   .banner_content {
     color: #fff;
@@ -106,6 +114,51 @@
     }
     p {
       opacity: 0.88;
+    }
+  }
+  .banner_slider {
+    width: 620px;
+    position: absolute;
+    right: -1rem;
+    bottom: 4rem;
+    .item {
+      .image {
+        border-radius: 10px;
+        height: 232px;
+        background-position: center;
+        background-size: cover;
+      }
+      img {
+        border-radius: inherit;
+      }
+    }
+    .owl-nav {
+      button {
+        height: 44px;
+        width: 44px;
+        border-radius: 50%;
+        border: 1px solid $white;
+        font-size: 2rem;
+        background-color: $white;
+        color: $primary;
+        cursor: pointer;
+        outline: none;
+        &.disabled {
+          background-color: transparent;
+          color: $white;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  @include max($xl2) {
+    .banner_content {
+      max-width: 445px;
+    }
+  }
+  @include max($xl) {
+    .banner_slider {
+      display: none;
     }
   }
 }
