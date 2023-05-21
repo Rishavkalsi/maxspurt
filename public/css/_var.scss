@@ -52,7 +52,12 @@ $xl5: 1599;
   --f14: 14px;
   --btnSpace: 1.25rem;
   --sec_space: 100px;
+  @include max($lg) {
+    --f54: 42px;
+    --f40: 36px;
+  }
   @include max($md) {
+    --sec_space: 50px;
     --f48: 34px;
     --f40: 30px;
     --f36: 26px;

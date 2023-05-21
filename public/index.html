@@ -104,17 +104,68 @@
                 </div>
               </div>
               <div class="input_col dropdown">
-                <div class="singleField hasDropdown" data-toggle="dropdown">
+                <div
+                  class="singleField hasDropdown"
+                  data-toggle="dropdown"
+                  data-bs-auto-close="outside"
+                >
                   <label>
                     <img src="./icons/price.svg" alt="icon" />
                     Price</label
                   >
                   <div class="inputText">$20</div>
                 </div>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
+                <div
+                  class="dropdown-menu"
+                  aria-labelledby="dropdownMenuClickableInside"
+                >
+                  <div class="price_menu">
+                    <div class="minMax_wrapper">
+                      <div class="input_wrap">
+                        <label>Min</label>
+                        <input type="text" />
+                      </div>
+                      <div class="input_wrap">
+                        <label>Max</label>
+                        <input type="text" />
+                      </div>
+                    </div>
+                    <button class="btn" type="button">Clear</button>
+                    <div class="price_list_wrapper">
+                      <div class="price_list_col">
+                        <label>Min Price</label>
+                        <div class="radio_btn">
+                          <input type="radio" name="minPrice" id="minPrice1" />
+                          <label for="minPrice1">$25,000</label>
+                        </div>
+                        <div class="radio_btn">
+                          <input
+                            type="radio"
+                            name="minPrice"
+                            id="minPrice2"
+                            checked
+                          />
+                          <label for="minPrice2">$50,000</label>
+                        </div>
+                      </div>
+                      <div class="price_list_col">
+                        <label>Max Price</label>
+                        <div class="radio_btn">
+                          <input type="radio" name="maxPrice" id="maxPrice1" />
+                          <label for="maxPrice1">$50,000</label>
+                        </div>
+                        <div class="radio_btn">
+                          <input
+                            type="radio"
+                            name="maxPrice"
+                            id="maxPrice2"
+                            checked
+                          />
+                          <label for="maxPrice2">$50,000</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="input_col dropdown">
@@ -126,9 +177,32 @@
                   <div class="inputText">$20</div>
                 </div>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
+                  <div class="horizontal_radio">
+                    <div class="radio_btn">
+                      <input type="radio" name="beds" id="bedsAny" />
+                      <label for="bedsAny">Any</label>
+                    </div>
+                    <div class="radio_btn">
+                      <input type="radio" name="beds" id="beds1" checked />
+                      <label for="beds1">+1</label>
+                    </div>
+                    <div class="radio_btn">
+                      <input type="radio" name="beds" id="beds2" checked />
+                      <label for="beds2">+2</label>
+                    </div>
+                    <div class="radio_btn">
+                      <input type="radio" name="beds" id="beds3" checked />
+                      <label for="beds3">+3</label>
+                    </div>
+                    <div class="radio_btn">
+                      <input type="radio" name="beds" id="beds4" checked />
+                      <label for="beds4">+4</label>
+                    </div>
+                    <div class="radio_btn">
+                      <input type="radio" name="beds" id="beds5" checked />
+                      <label for="beds5">+5</label>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="input_col dropdown">
@@ -140,9 +214,32 @@
                   <div class="inputText">$20</div>
                 </div>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
+                  <div class="horizontal_radio">
+                    <div class="radio_btn">
+                      <input type="radio" name="baths" id="bathsAny" />
+                      <label for="bathsAny">Any</label>
+                    </div>
+                    <div class="radio_btn">
+                      <input type="radio" name="baths" id="baths1" checked />
+                      <label for="baths1">+1</label>
+                    </div>
+                    <div class="radio_btn">
+                      <input type="radio" name="baths" id="baths2" checked />
+                      <label for="baths2">+2</label>
+                    </div>
+                    <div class="radio_btn">
+                      <input type="radio" name="baths" id="baths3" checked />
+                      <label for="baths3">+3</label>
+                    </div>
+                    <div class="radio_btn">
+                      <input type="radio" name="baths" id="baths4" checked />
+                      <label for="baths4">+4</label>
+                    </div>
+                    <div class="radio_btn">
+                      <input type="radio" name="baths" id="baths5" checked />
+                      <label for="baths5">+5</label>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="input_col dropdown">
@@ -154,9 +251,14 @@
                   <div class="inputText">$20</div>
                 </div>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
+                  <span class="dropdown-item" href="#">Min Sqft</span>
+                  <span class="dropdown-item" href="#">Min 500</span>
+                  <span class="dropdown-item" href="#">Min 1000</span>
+                  <span class="dropdown-item" href="#">Min 1500</span>
+                  <span class="dropdown-item" href="#">Min 2000</span>
+                  <span class="dropdown-item" href="#">Min 3000</span>
+                  <span class="dropdown-item" href="#">Min 4000</span>
+                  <span class="dropdown-item" href="#">Min 5000</span>
                 </div>
               </div>
               <div class="search_btn">
@@ -190,7 +292,12 @@
                   uncommonly occasional assistance sufficient not. Letter of on
                   become he tended active enable to.
                 </p>
-                <button class="btn">Get Started</button>
+                <button class="btn">
+                  Get Started
+                  <span class="icn">
+                    <img src="./icons/arrow.svg" alt="" />
+                  </span>
+                </button>
               </div>
             </div>
           </div>
@@ -207,7 +314,12 @@
                   uncommonly occasional assistance sufficient not. Letter of on
                   become he tended active enable to.
                 </p>
-                <button class="btn">Get Started</button>
+                <button class="btn">
+                  Get Started
+                  <span class="icn">
+                    <img src="./icons/arrow.svg" alt="" />
+                  </span>
+                </button>
               </div>
             </div>
           </div>
@@ -224,7 +336,12 @@
                   uncommonly occasional assistance sufficient not. Letter of on
                   become he tended active enable to.
                 </p>
-                <button class="btn">Get Started</button>
+                <button class="btn">
+                  Get Started
+                  <span class="icn">
+                    <img src="./icons/arrow.svg" alt="" />
+                  </span>
+                </button>
               </div>
             </div>
           </div>
@@ -241,7 +358,12 @@
                   uncommonly occasional assistance sufficient not. Letter of on
                   become he tended active enable to.
                 </p>
-                <button class="btn">Get Started</button>
+                <button class="btn">
+                  Get Started
+                  <span class="icn">
+                    <img src="./icons/arrow.svg" alt="" />
+                  </span>
+                </button>
               </div>
             </div>
           </div>
@@ -408,7 +530,7 @@
               </div>
               <div class="single_type">
                 <div class="icon">
-                  <img src="./icons/phone.svg" alt="" />
+                  <img src="./icons/email.svg" alt="" />
                 </div>
                 <div class="detail">
                   <p>Email</p>
@@ -498,7 +620,7 @@
                       placeholder="Search Properties"
                     />
                     <button class="input-group-text btn btn-secondary">
-                      ->
+                      <img src="./icons/arrow.svg" alt="" />
                     </button>
                   </div>
                   <div class="input-group single_field">
@@ -508,7 +630,7 @@
                       placeholder="Write Email"
                     />
                     <button class="input-group-text btn btn-secondary">
-                      ->
+                      <img src="./icons/arrow.svg" alt="" />
                     </button>
                   </div>
                   <div class="input-group single_field">
@@ -518,7 +640,7 @@
                       placeholder="Call Us"
                     />
                     <button class="input-group-text btn btn-secondary">
-                      ->
+                      <img src="./icons/arrow.svg" alt="" />
                     </button>
                   </div>
                 </form>
@@ -582,11 +704,11 @@
     $(".homes_slider").owlCarousel({
       loop: false,
       margin: 30,
-      nav: true,
       autoplay: true,
       autoplayTimeout: 3000,
       dots: true,
       smartSpeed: 800,
+      nav: true,
       responsive: {
         992: {
           items: 3,
@@ -594,7 +716,7 @@
         768: {
           items: 2,
         },
-        480: {
+        0: {
           items: 1,
         },
       },

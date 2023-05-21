@@ -112,6 +112,8 @@
 
 // ============== Quick search =================
 .quickSearch {
+  z-index: 9;
+  position: relative;
   .search_inner {
     background: $white;
     box-shadow: 0px 20px 50px rgba(219, 222, 225, 0.4);
@@ -125,17 +127,28 @@
   .fields_wrapper {
     margin-top: 1.25rem;
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
-  }
-  .input_col {
-    flex-basis: 15%;
-    flex-grow: 1;
-    &.col1 {
-      flex-basis: 20%;
+    .input_col {
+      flex-basis: 15%;
+      flex-grow: 1;
+      &.col1 {
+        flex-basis: 20%;
+      }
+    }
+    @include max($sm) {
+      gap: 10px;
+      .input_col {
+        flex-basis: 100%;
+        &.col1 {
+          flex-basis: 100%;
+        }
+      }
     }
   }
   .search_btn {
     @include flexCenter;
+    margin: auto;
     button {
       border-radius: 10px;
       height: 100%;
@@ -147,11 +160,13 @@
     }
   }
   .singleField {
+    position: relative;
     padding: 10px;
     border-radius: 8px;
-    background-color: rgba(12, 31, 61, 0.08);
+    background-color: rgb(235, 237, 240);
     font-size: 14px;
     label {
+      white-space: nowrap;
       cursor: inherit;
       display: flex;
       align-items: center;
@@ -178,7 +193,7 @@
       color: $text_color;
     }
     &.hasDropdown {
-      padding-right: 2rem;
+      padding-right: 2.5rem;
       cursor: pointer;
       position: relative;
       &::after {
@@ -191,6 +206,121 @@
         transform: translate(0, -80%) rotate(45deg);
         border-right: 2px solid #363a3d;
         border-bottom: 2px solid #363a3d;
+      }
+    }
+  }
+  .dropdown-menu {
+    max-width: 140%;
+    min-width: 200px;
+    color: $text_color;
+    // background-color: rgb(235, 237, 240);
+    padding: 12px;
+    font-size: 14px;
+    border: none;
+    background: #ecedef;
+    border-radius: 8px;
+    .dropdown-item {
+      color: inherit;
+    }
+    @include max($sm) {
+      min-width: 100%;
+      margin-top: 4px;
+      box-shadow: 0px 0px 8px -3px rgba(0, 0, 0, 0.4);
+    }
+  }
+  .price_menu {
+    .minMax_wrapper {
+      display: flex;
+      gap: 10px;
+      .input_wrap {
+        flex-basis: 50%;
+        max-width: 50%;
+        label {
+          margin: 0;
+        }
+        input {
+          width: 100%;
+          padding: 4px;
+          border: none;
+          border-radius: 6px;
+          border: 1px solid rgba(100, 112, 131, 0.4);
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+    button {
+      margin-top: 10px;
+      border-radius: 6px;
+      display: block;
+      color: $text_color;
+      width: 100%;
+      border: 1px solid currentColor;
+      min-height: 25px;
+    }
+    .price_list_wrapper {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+      .price_list_col {
+        flex-basis: 50%;
+        max-width: 50%;
+        > label {
+          display: block;
+          margin: 0 0 0 4px;
+        }
+      }
+      .radio_btn {
+        label {
+          background-color: $white;
+          display: block;
+          border-radius: 6px;
+          padding: 4px;
+          @include flexCenter;
+          color: $primary;
+          min-height: 30px;
+        }
+        input {
+          display: none;
+          &:checked {
+            + label {
+              background-color: $secondary;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+  .horizontal_radio {
+    display: flex;
+    border: 1px solid $text_color;
+    border-radius: 4px;
+    overflow: hidden;
+    .radio_btn {
+      flex-basis: 20%;
+      flex-grow: 1;
+      label {
+        padding: 4px 6px;
+        margin: 0;
+        height: 32px;
+        background-color: $white;
+        @include flexCenter;
+      }
+      &:not(:last-child) {
+        label {
+          border-right: 1px solid $text_color;
+        }
+      }
+      input {
+        display: none;
+        &:checked {
+          + label {
+            background-color: $secondary;
+            color: $white;
+          }
+        }
       }
     }
   }
@@ -250,6 +380,13 @@
         }
       }
     }
+    @include max($lg) {
+      &.owl-theme {
+        .owl-nav {
+          display: none;
+        }
+      }
+    }
   }
   .card_img {
     height: 275px;
@@ -265,8 +402,6 @@
     margin-left: auto;
     margin-top: -2rem;
     padding: 1.5rem;
-    h4 {
-    }
     p {
       margin: 1rem 0;
       color: $text_color;
@@ -275,6 +410,19 @@
       color: $secondary;
       background-color: transparent;
       padding: 2px 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      .icn {
+        @include flexCenter;
+        border-radius: 50%;
+        background-color: $secondary;
+        height: 1.1rem;
+        aspect-ratio: 1;
+        img {
+          max-width: 60%;
+        }
+      }
     }
   }
 }
@@ -389,6 +537,30 @@
       bottom: 1rem;
     }
   }
+  @include max($xl) {
+    .sales_wrapper {
+      .card_col,
+      .card_col_lg {
+        flex-basis: 33.33%;
+      }
+    }
+  }
+  @include max($lg) {
+    .sales_wrapper {
+      .card_col,
+      .card_col_lg {
+        flex-basis: 50%;
+      }
+    }
+  }
+  @include max($md) {
+    .sales_wrapper {
+      .card_col,
+      .card_col_lg {
+        flex-basis: 100%;
+      }
+    }
+  }
 }
 
 // ============== contact us =============
@@ -417,6 +589,7 @@
   .contactType_wrap {
     margin-top: 2rem;
     display: flex;
+    flex-wrap: wrap;
     gap: 1.5rem;
     .single_type {
       display: flex;
@@ -430,6 +603,7 @@
       }
     }
     .icon {
+      flex-shrink: 0;
       height: 2.25rem;
       width: 2.25rem;
       background-color: #fff;
@@ -438,10 +612,36 @@
     }
   }
   .content_wrap {
+    padding: 1rem 0;
     color: $white;
   }
   .image_wrap {
     margin-top: -14%;
+  }
+  @include max($lg) {
+    .image_wrap {
+      margin-top: -5%;
+    }
+  }
+  @include max($md) {
+    .contact_inner {
+      align-items: flex-end;
+    }
+    .image_wrap {
+      margin-top: 0;
+    }
+  }
+  @include max($md) {
+    .contact_inner {
+      flex-wrap: wrap;
+      padding: 1rem;
+      > * {
+        flex-basis: 100%;
+      }
+      .image_wrap {
+        display: none;
+      }
+    }
   }
 }
 // =============footer ================
@@ -516,6 +716,7 @@
         display: flex;
         flex-direction: column;
         gap: 13px;
+        white-space: nowrap;
       }
     }
     .footer_col3 {
@@ -535,12 +736,44 @@
         input {
           border-radius: 6px 0 0 6px;
           font-size: 14px;
+          &:focus {
+            box-shadow: none;
+          }
         }
         button {
           border: none;
           border-radius: 0 6px 6px 0;
           color: #fff;
+          img {
+            max-width: 16px;
+          }
         }
+      }
+    }
+    @include max($lg) {
+      flex-wrap: wrap;
+      .footer_col1 {
+        order: -2;
+      }
+      .footer_col1,
+      .footer_col2 {
+        flex-grow: 1;
+      }
+      .footer_col3 {
+        order: -1;
+        margin-top: 20px;
+        flex-basis: 50%;
+        .single_field {
+          max-width: none;
+        }
+      }
+    }
+    @include max($md) {
+      gap: 1rem;
+      .footer_col1,
+      .footer_col3 {
+        flex-basis: 100%;
+        order: initial;
       }
     }
   }
@@ -598,6 +831,22 @@
         img {
           max-width: 90%;
           max-height: 90%;
+        }
+      }
+    }
+    @include max($lg) {
+      flex-wrap: wrap;
+      gap: 2rem;
+      > * {
+        flex-basis: 100%;
+      }
+    }
+    @include max($md) {
+      .footer_bottomLeft {
+        flex-wrap: wrap;
+        gap: 1rem;
+        .text {
+          flex-basis: 100%;
         }
       }
     }

@@ -81,8 +81,15 @@
   --btnSpace: 1.25rem;
   --sec_space: 100px;
 }
+@media screen and (max-width: 991px) {
+  :root {
+    --f54: 42px;
+    --f40: 36px;
+  }
+}
 @media screen and (max-width: 767px) {
   :root {
+    --sec_space: 50px;
     --f48: 34px;
     --f40: 30px;
     --f36: 26px;
@@ -323,6 +330,10 @@ h6 {
   opacity: 0.88;
 }
 
+.quickSearch {
+  z-index: 9;
+  position: relative;
+}
 .quickSearch .search_inner {
   background: #fff;
   box-shadow: 0px 20px 50px rgba(219, 222, 225, 0.4);
@@ -336,19 +347,32 @@ h6 {
 .quickSearch .fields_wrapper {
   margin-top: 1.25rem;
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
-.quickSearch .input_col {
+.quickSearch .fields_wrapper .input_col {
   flex-basis: 15%;
   flex-grow: 1;
 }
-.quickSearch .input_col.col1 {
+.quickSearch .fields_wrapper .input_col.col1 {
   flex-basis: 20%;
+}
+@media screen and (max-width: 567px) {
+  .quickSearch .fields_wrapper {
+    gap: 10px;
+  }
+  .quickSearch .fields_wrapper .input_col {
+    flex-basis: 100%;
+  }
+  .quickSearch .fields_wrapper .input_col.col1 {
+    flex-basis: 100%;
+  }
 }
 .quickSearch .search_btn {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: auto;
 }
 .quickSearch .search_btn button {
   border-radius: 10px;
@@ -360,12 +384,14 @@ h6 {
   height: auto;
 }
 .quickSearch .singleField {
+  position: relative;
   padding: 10px;
   border-radius: 8px;
-  background-color: rgba(12, 31, 61, 0.08);
+  background-color: rgb(235, 237, 240);
   font-size: 14px;
 }
 .quickSearch .singleField label {
+  white-space: nowrap;
   cursor: inherit;
   display: flex;
   align-items: center;
@@ -394,7 +420,7 @@ h6 {
   color: #647083;
 }
 .quickSearch .singleField.hasDropdown {
-  padding-right: 2rem;
+  padding-right: 2.5rem;
   cursor: pointer;
   position: relative;
 }
@@ -408,6 +434,116 @@ h6 {
   transform: translate(0, -80%) rotate(45deg);
   border-right: 2px solid #363a3d;
   border-bottom: 2px solid #363a3d;
+}
+.quickSearch .dropdown-menu {
+  max-width: 140%;
+  min-width: 200px;
+  color: #647083;
+  padding: 12px;
+  font-size: 14px;
+  border: none;
+  background: #ecedef;
+  border-radius: 8px;
+}
+.quickSearch .dropdown-menu .dropdown-item {
+  color: inherit;
+}
+@media screen and (max-width: 567px) {
+  .quickSearch .dropdown-menu {
+    min-width: 100%;
+    margin-top: 4px;
+    box-shadow: 0px 0px 8px -3px rgba(0, 0, 0, 0.4);
+  }
+}
+.quickSearch .price_menu .minMax_wrapper {
+  display: flex;
+  gap: 10px;
+}
+.quickSearch .price_menu .minMax_wrapper .input_wrap {
+  flex-basis: 50%;
+  max-width: 50%;
+}
+.quickSearch .price_menu .minMax_wrapper .input_wrap label {
+  margin: 0;
+}
+.quickSearch .price_menu .minMax_wrapper .input_wrap input {
+  width: 100%;
+  padding: 4px;
+  border: none;
+  border-radius: 6px;
+  border: 1px solid rgba(100, 112, 131, 0.4);
+}
+.quickSearch .price_menu .minMax_wrapper .input_wrap input:focus {
+  outline: none;
+}
+.quickSearch .price_menu button {
+  margin-top: 10px;
+  border-radius: 6px;
+  display: block;
+  color: #647083;
+  width: 100%;
+  border: 1px solid currentColor;
+  min-height: 25px;
+}
+.quickSearch .price_menu .price_list_wrapper {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.quickSearch .price_menu .price_list_wrapper .price_list_col {
+  flex-basis: 50%;
+  max-width: 50%;
+}
+.quickSearch .price_menu .price_list_wrapper .price_list_col > label {
+  display: block;
+  margin: 0 0 0 4px;
+}
+.quickSearch .price_menu .price_list_wrapper .radio_btn label {
+  background-color: #fff;
+  display: block;
+  border-radius: 6px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0c1f3d;
+  min-height: 30px;
+}
+.quickSearch .price_menu .price_list_wrapper .radio_btn input {
+  display: none;
+}
+.quickSearch .price_menu .price_list_wrapper .radio_btn input:checked + label {
+  background-color: #ee161f;
+  color: #fff;
+}
+.quickSearch .horizontal_radio {
+  display: flex;
+  border: 1px solid #647083;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.quickSearch .horizontal_radio .radio_btn {
+  flex-basis: 20%;
+  flex-grow: 1;
+}
+.quickSearch .horizontal_radio .radio_btn label {
+  padding: 4px 6px;
+  margin: 0;
+  height: 32px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.quickSearch .horizontal_radio .radio_btn:not(:last-child) label {
+  border-right: 1px solid #647083;
+}
+.quickSearch .horizontal_radio .radio_btn input {
+  display: none;
+}
+.quickSearch .horizontal_radio .radio_btn input:checked + label {
+  background-color: #ee161f;
+  color: #fff;
 }
 
 .homes {
@@ -455,6 +591,11 @@ h6 {
   color: #647083;
   opacity: 1;
 }
+@media screen and (max-width: 991px) {
+  .homes .homes_slider.owl-theme .owl-nav {
+    display: none;
+  }
+}
 .homes .card_img {
   height: 275px;
   border-radius: 10px;
@@ -478,6 +619,21 @@ h6 {
   color: #ee161f;
   background-color: transparent;
   padding: 2px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.homes .content button .icn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #ee161f;
+  height: 1.1rem;
+  aspect-ratio: 1;
+}
+.homes .content button .icn img {
+  max-width: 60%;
 }
 
 .services .images_wrapper {
@@ -572,6 +728,24 @@ h6 {
   color: #fff;
   bottom: 1rem;
 }
+@media screen and (max-width: 1199px) {
+  .forSale .sales_wrapper .card_col,
+  .forSale .sales_wrapper .card_col_lg {
+    flex-basis: 33.33%;
+  }
+}
+@media screen and (max-width: 991px) {
+  .forSale .sales_wrapper .card_col,
+  .forSale .sales_wrapper .card_col_lg {
+    flex-basis: 50%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .forSale .sales_wrapper .card_col,
+  .forSale .sales_wrapper .card_col_lg {
+    flex-basis: 100%;
+  }
+}
 
 .contactUs .dots_layer {
   height: 100%;
@@ -597,6 +771,7 @@ h6 {
 .contactUs .contactType_wrap {
   margin-top: 2rem;
   display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
 }
 .contactUs .contactType_wrap .single_type {
@@ -611,6 +786,7 @@ h6 {
   font-size: 1rem;
 }
 .contactUs .contactType_wrap .icon {
+  flex-shrink: 0;
   height: 2.25rem;
   width: 2.25rem;
   background-color: #fff;
@@ -620,10 +796,36 @@ h6 {
   border-radius: 50%;
 }
 .contactUs .content_wrap {
+  padding: 1rem 0;
   color: #fff;
 }
 .contactUs .image_wrap {
   margin-top: -14%;
+}
+@media screen and (max-width: 991px) {
+  .contactUs .image_wrap {
+    margin-top: -5%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .contactUs .contact_inner {
+    align-items: flex-end;
+  }
+  .contactUs .image_wrap {
+    margin-top: 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .contactUs .contact_inner {
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+  .contactUs .contact_inner > * {
+    flex-basis: 100%;
+  }
+  .contactUs .contact_inner .image_wrap {
+    display: none;
+  }
 }
 
 .footer {
@@ -697,6 +899,7 @@ h6 {
   display: flex;
   flex-direction: column;
   gap: 13px;
+  white-space: nowrap;
 }
 .footer .footer_top .footer_col3 {
   flex-basis: 28%;
@@ -717,10 +920,46 @@ h6 {
   border-radius: 6px 0 0 6px;
   font-size: 14px;
 }
+.footer .footer_top .footer_col3 .single_field input:focus {
+  box-shadow: none;
+}
 .footer .footer_top .footer_col3 .single_field button {
   border: none;
   border-radius: 0 6px 6px 0;
   color: #fff;
+}
+.footer .footer_top .footer_col3 .single_field button img {
+  max-width: 16px;
+}
+@media screen and (max-width: 991px) {
+  .footer .footer_top {
+    flex-wrap: wrap;
+  }
+  .footer .footer_top .footer_col1 {
+    order: -2;
+  }
+  .footer .footer_top .footer_col1,
+  .footer .footer_top .footer_col2 {
+    flex-grow: 1;
+  }
+  .footer .footer_top .footer_col3 {
+    order: -1;
+    margin-top: 20px;
+    flex-basis: 50%;
+  }
+  .footer .footer_top .footer_col3 .single_field {
+    max-width: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  .footer .footer_top {
+    gap: 1rem;
+  }
+  .footer .footer_top .footer_col1,
+  .footer .footer_top .footer_col3 {
+    flex-basis: 100%;
+    order: initial;
+  }
 }
 .footer .footer_bottom {
   padding-top: 2rem;
@@ -779,4 +1018,22 @@ h6 {
 .footer .footer_bottom .footer_bottomRight .btns_wrap img {
   max-width: 90%;
   max-height: 90%;
+}
+@media screen and (max-width: 991px) {
+  .footer .footer_bottom {
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  .footer .footer_bottom > * {
+    flex-basis: 100%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .footer .footer_bottom .footer_bottomLeft {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .footer .footer_bottom .footer_bottomLeft .text {
+    flex-basis: 100%;
+  }
 }/*# sourceMappingURL=styles.css.map */
