@@ -31,7 +31,9 @@
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span></span>
+            <span></span>
+            <span></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="menu_list navbar-nav mr-auto">
@@ -67,6 +69,9 @@
               </li>
             </ul>
           </div>
+          <div class="profile">
+            <img src="./icons/profile.png" alt="" />
+          </div>
         </div>
       </div>
     </header>
@@ -87,7 +92,80 @@
       <div class="container">
         <div class="search_inner">
           <h4>Quick Search</h4>
-          <div class="search_wrapper"></div>
+          <form>
+            <div class="fields_wrapper">
+              <div class="input_col col1">
+                <div class="singleField">
+                  <label>
+                    <img src="./icons/locationBlack.svg" alt="icon" />
+                    Location</label
+                  >
+                  <input type="text" placeholder="City, Address, Zip or MLS#" />
+                </div>
+              </div>
+              <div class="input_col dropdown">
+                <div class="singleField hasDropdown" data-toggle="dropdown">
+                  <label>
+                    <img src="./icons/price.svg" alt="icon" />
+                    Price</label
+                  >
+                  <div class="inputText">$20</div>
+                </div>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </div>
+              <div class="input_col dropdown">
+                <div class="singleField hasDropdown" data-toggle="dropdown">
+                  <label>
+                    <img src="./icons/bed.svg" alt="icon" />
+                    Beds</label
+                  >
+                  <div class="inputText">$20</div>
+                </div>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </div>
+              <div class="input_col dropdown">
+                <div class="singleField hasDropdown" data-toggle="dropdown">
+                  <label>
+                    <img src="./icons/bathroom.svg" alt="icon" />
+                    Baths</label
+                  >
+                  <div class="inputText">$20</div>
+                </div>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </div>
+              <div class="input_col dropdown">
+                <div class="singleField hasDropdown" data-toggle="dropdown">
+                  <label>
+                    <img src="./icons/bathroom.svg" alt="icon" />
+                    Square Feet</label
+                  >
+                  <div class="inputText">$20</div>
+                </div>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </div>
+              <div class="search_btn">
+                <button class="btn btn-secondary">
+                  <img src="./icons/search.svg" alt="search" />
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </section>
@@ -137,7 +215,7 @@
             <div class="homes_card">
               <div
                 class="card_img"
-                style="background-image: url(./images/home2.jpg)"
+                style="background-image: url(./images/home3.jpg)"
               ></div>
               <div class="content">
                 <h4>Home Buying</h4>
@@ -154,7 +232,7 @@
             <div class="homes_card">
               <div
                 class="card_img"
-                style="background-image: url(./images/home3.jpg)"
+                style="background-image: url(./images/home2.jpg)"
               ></div>
               <div class="content">
                 <h4>Home Selling</h4>
@@ -172,8 +250,8 @@
     </section>
     <section class="section services">
       <div class="container">
-        <div class="row justify-content-between">
-          <div class="col-md-5">
+        <div class="row justify-content-between flex-wrap-reverse">
+          <div class="col-md-6 col-xl-5">
             <div class="images_wrapper">
               <div class="left_images">
                 <img src="./images/service1.jpg" alt="" />
@@ -304,6 +382,9 @@
     <section class="section contactUs">
       <div class="container">
         <div class="contact_inner">
+          <div class="dots_layer">
+            <img src="./images/whiteDots.png" alt="" />
+          </div>
           <div class="content_wrap">
             <h1>An Expert in Real Estate</h1>
             <div class="contactType_wrap">
@@ -313,7 +394,7 @@
                 </div>
                 <div class="detail">
                   <p>Phone Number</p>
-                  <h4>800-450-8090</h4>
+                  <h5>800-450-8090</h5>
                 </div>
               </div>
               <div class="single_type">
@@ -321,8 +402,8 @@
                   <img src="./icons/phone.svg" alt="" />
                 </div>
                 <div class="detail">
-                  <p>Phone Number</p>
-                  <h4>800-450-8090</h4>
+                  <p>Fax</p>
+                  <h5>855-459-8090</h5>
                 </div>
               </div>
               <div class="single_type">
@@ -330,8 +411,8 @@
                   <img src="./icons/phone.svg" alt="" />
                 </div>
                 <div class="detail">
-                  <p>Phone Number</p>
-                  <h4>800-450-8090</h4>
+                  <p>Email</p>
+                  <h5>info@maxspurt.com</h5>
                 </div>
               </div>
             </div>
@@ -499,14 +580,24 @@
   <script src="./owl/owl.carousel.min.js"></script>
   <script>
     $(".homes_slider").owlCarousel({
-      loop: true,
+      loop: false,
       margin: 30,
       nav: true,
       autoplay: true,
-      autoplayTimeout: 4000,
+      autoplayTimeout: 3000,
       dots: true,
-      items: 3,
       smartSpeed: 800,
+      responsive: {
+        992: {
+          items: 3,
+        },
+        768: {
+          items: 2,
+        },
+        480: {
+          items: 1,
+        },
+      },
     });
   </script>
 

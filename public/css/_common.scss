@@ -1,4 +1,5 @@
 @import "./var";
+@import "./fonts";
 
 :root {
   @include cssVariables;
@@ -14,10 +15,10 @@ html {
 }
 body {
   min-height: 100vh;
+  font-family: "Gilroy" !important;
 }
 * {
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif !important;
   margin: 0;
   padding: 0;
 }
@@ -100,6 +101,9 @@ h6 {
 
 // =========buttons =======
 .btn {
+  min-height: 46px;
+  font-weight: 500;
+  border-radius: 4px;
   &:focus,
   &:active {
     box-shadow: none !important;
